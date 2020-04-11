@@ -10,6 +10,8 @@ module.exports = {
     title: 'Sam Xifaras'
   },
   plugins: [
+    `gatsby-plugin-netlify-cms`,
+    //`gatsby-plugin-netlify-identity-widget`,
     {
       resolve: `gatsby-theme-material-ui`,
       options: {
