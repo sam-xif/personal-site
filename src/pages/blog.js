@@ -37,6 +37,9 @@ export const query = graphql`
     ) {
       edges {
         node {
+          fields {
+            path
+          }
           frontmatter {
             title
             date
