@@ -3,7 +3,6 @@ import ButtonBase from "@material-ui/core/ButtonBase"
 import Typography from "@material-ui/core/Typography"
 import React, { useState } from "react"
 import { makeStyles } from "@material-ui/styles"
-import arrowImg from '../../static/assets/arrowAnimLeft.svg'
 import { navigate } from 'gatsby'
 import Fade from "@material-ui/core/Fade"
 
