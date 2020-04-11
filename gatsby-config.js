@@ -6,5 +6,25 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: []
+  siteMetadata: {
+    title: 'Sam Xifaras'
+  },
+  plugins: [
+    `gatsby-plugin-material-ui`,
+    {
+      resolve: `gatsby-theme-material-ui`,
+      options: {
+        webFontsConfig: {
+          fonts: {
+            google: [
+              {
+                family: `Montserrat`,
+                variants: [`300`, `400`, `500`],
+              },
+            ],
+          },
+        },
+      },
+    },
+  ]
 }
