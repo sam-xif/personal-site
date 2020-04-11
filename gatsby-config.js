@@ -10,7 +10,6 @@ module.exports = {
     title: 'Sam Xifaras'
   },
   plugins: [
-    `gatsby-plugin-material-ui`,
     {
       resolve: `gatsby-theme-material-ui`,
       options: {
