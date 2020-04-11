@@ -10,7 +10,22 @@ module.exports = {
     title: 'Sam Xifaras'
   },
   plugins: [
-    `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-layout`,
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
     {
       resolve: `gatsby-theme-material-ui`,
       options: {

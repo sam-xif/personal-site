@@ -5238,6 +5238,13 @@ gatsby-plugin-compile-es6-packages@^2.1.0:
     "@babel/runtime" "^7.0.0"
     regex-escape "^3.4.8"
 
+gatsby-plugin-layout@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-layout/-/gatsby-plugin-layout-1.2.1.tgz#e61d37b882193f5e675fd25880beaea363bebf15"
+  integrity sha512-ZvwCXqyDj+KD4zS1fbJ1vb+fGz4SN+4MSgSCGaxp3bWmYqjkHTc06KfkHGcjPW7xJY7n1md9jJ6+FbDNeYzcFw==
+  dependencies:
+    "@babel/runtime" "^7.8.7"
+
 gatsby-plugin-material-ui@^2.1.4, gatsby-plugin-material-ui@^2.1.6:
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-material-ui/-/gatsby-plugin-material-ui-2.1.6.tgz#7664f7b3027d68f2fabc2a1d5e9cf44a84103caa"
@@ -5275,7 +5282,7 @@ gatsby-plugin-page-creator@^2.2.1:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-react-helmet@^3.1.2:
+gatsby-plugin-react-helmet@^3.1.2, gatsby-plugin-react-helmet@^3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.2.2.tgz#8817da61cd57b8fd9cf1cc6fb55c1e9564aa6a3c"
   integrity sha512-mPd7gefGIxqAuxFJgDuttR9+DnRLKLrCh61ND1iLSeOp9GoYS/qH8Rhka6fkpmBXOtUVyujzaUthhB/ll/a4RA==
