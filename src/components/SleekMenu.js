@@ -1,8 +1,11 @@
 import Grid from "@material-ui/core/Grid"
 import ButtonBase from "@material-ui/core/ButtonBase"
 import Typography from "@material-ui/core/Typography"
-import React from "react"
+import React, { useState } from "react"
 import { makeStyles } from "@material-ui/styles"
+import arrowImg from '../../static/assets/arrowAnimLeft.svg'
+import { navigate } from 'gatsby'
+import Fade from "@material-ui/core/Fade"
 
 const useStyles = makeStyles(theme => ({
   contentRoot: {
@@ -28,6 +31,16 @@ const useStyles = makeStyles(theme => ({
         borderColor: theme.palette.secondary.main
       },
     },
+  },
+  arrow: {
+    position: 'absolute',
+    left: 50,
+    right: 0,
+    top: 0,
+    bottom: 150,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   imageSrc: {
     position: 'absolute',
@@ -78,61 +91,69 @@ const useStyles = makeStyles(theme => ({
 export default () => {
   const classes = useStyles()
   return (
-    <Grid container style={{height: '100%'}}>
-      <Grid item xs={6} style={{ height: '100%' }}>
-        <ButtonBase
-          focusRipple
-          className={classes.image}
-          focusVisibleClassName={classes.focusVisible}
-          style={{
-            width: '100%',
-            height: '100%',
-          }}
-        >
-          <span className={classes.imageBackdrop}/>
-          <span className={classes.imageButton}>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-              className={classes.imageTitle}
-            >
-              Blog
-              <span className={classes.imageMarked}/>
-            </Typography>
-          </span>
-        </ButtonBase>
+    <>
+      <Grid container style={{height: '100%'}}>
+        <Grid item xs={6} style={{ height: '100%' }}>
+          <ButtonBase
+            focusRipple
+            className={classes.image}
+            focusVisibleClassName={classes.focusVisible}
+            style={{
+              width: '100%',
+              height: '100%',
+            }}
+            onClick={() => setTimeout(() => navigate('/blog'), 300)}
+          >
+            <span className={classes.imageBackdrop}/>
+            <Fade in={true} timeout={800}>
+              <span className={classes.imageButton}>
+                <Typography
+                  component="span"
+                  variant="subtitle1"
+                  color="inherit"
+                  className={classes.imageTitle}
+                >
+                  BLOG
+                  <span className={classes.imageMarked}/>
+                </Typography>
+              </span>
+            </Fade>
+          </ButtonBase>
+        </Grid>
+        <Grid item xs={6} style={{ height: '100%' }}>
+          <ButtonBase
+            focusRipple
+            className={classes.image}
+            focusVisibleClassName={classes.focusVisible}
+            style={{
+              width: '100%',
+              height: '100%',
+            }}
+            onClick={() => setTimeout(() => navigate('/portfolio'), 300)}
+          >
+            {/*<span*/}
+            {/*  className={classes.imageSrc}*/}
+            {/*  style={{*/}
+            {/*    backgroundImage: `url(${collegeProject})`,*/}
+            {/*    zIndex: -1*/}
+            {/*  }}*/}
+            {/*/>*/}
+            <span className={classes.imageBackdrop}/>
+            <Fade in={true} timeout={1600}>
+              <span className={classes.imageButton}>
+                <Typography
+                  component="span"
+                  variant="subtitle1"
+                  color="inherit"
+                  className={classes.imageTitle}
+                >
+                  PORTFOLIO
+                  <span className={classes.imageMarked}/>
+                </Typography>
+              </span>
+            </Fade>
+          </ButtonBase>
+        </Grid>
       </Grid>
-      <Grid item xs={6} style={{ height: '100%' }}>
-        <ButtonBase
-          focusRipple
-          className={classes.image}
-          focusVisibleClassName={classes.focusVisible}
-          style={{
-            width: '100%',
-            height: '100%',
-          }}
-        >
-          {/*<span*/}
-          {/*  className={classes.imageSrc}*/}
-          {/*  style={{*/}
-          {/*    backgroundImage: `url(${collegeProject})`,*/}
-          {/*    zIndex: -1*/}
-          {/*  }}*/}
-          {/*/>*/}
-          <span className={classes.imageBackdrop}/>
-          <span className={classes.imageButton}>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-              className={classes.imageTitle}
-            >
-            Portfolio
-            <span className={classes.imageMarked}/>
-            </Typography>
-          </span>
-        </ButtonBase>
-      </Grid>
-    </Grid>)
+    </>)
 }

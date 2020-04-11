@@ -4,6 +4,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles"
 import Typography from "@material-ui/core/Typography"
 import Toolbar from "@material-ui/core/Toolbar"
 import Button from "@material-ui/core/Button"
+import { Link } from 'gatsby-theme-material-ui'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,6 +21,10 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   toolbar: {
+  },
+  link: {
+    textDecoration: 'none',
+    color: theme.palette.secondary.main
   }
 }))
 
@@ -29,7 +34,7 @@ export default ({ children }) => {
     <AppBar color={'primary'} position="static" className={classes.root}>
       <Toolbar className={classes.toolbar}>
         <Typography variant="h4" color={'secondary'} className={classes.title}>
-          SGX
+          <Link to={'/'} className={classes.link}>SGX</Link>
         </Typography>
         <Button color={'inherit'} className={classes.toolbarButton}>About Me</Button>
         <Button color={'inherit'} className={classes.toolbarButton}>Contact</Button>
