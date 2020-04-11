@@ -19,7 +19,6 @@
     "gatsby": "^2.20.12",
     "gatsby-plugin-material-ui": "^2.1.6",
     "gatsby-plugin-netlify-cms": "^4.2.2",
-    "gatsby-plugin-netlify-identity-widget": "^1.1.1",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-theme-material-ui": "^1.0.8",
     "gatsby-transformer-remark": "^2.7.1",
