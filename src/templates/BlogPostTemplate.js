@@ -24,7 +24,8 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(2)
   },
   body: {
-    fontSize: '115%'
+    fontSize: '115%',
+    fontFamily: theme.typography.fontFamily
   }
 }))
 
