@@ -52,6 +52,10 @@ const useStyles = makeStyles(theme => ({
   },
   tagsContainer: {
     paddingTop: theme.spacing(2)
+  },
+  paperDivider: {
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(2)
   }
 }))
 
@@ -74,11 +78,12 @@ export default (props) => {
               <ButtonBase className={classes.buttonRoot}>
                 <Card className={classes.postRoot}>
                   <CardContent className={classes.postContent}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8}}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between'}}>
                       <Typography variant={'h5'} className={classes.text}>{node.frontmatter.title}</Typography>
                       <Typography className={classes.date}><i>{date.format('MMMM D, YYYY')}</i></Typography>
                     </div>
-                    <Divider />
+                    <Divider className={classes.paperDivider} />
+                    <Typography className={classes.text}>{node.frontmatter.description}</Typography>
                     <div className={classes.tagsContainer}>
                       {node.frontmatter.tags.map(tag => {
                         return (
