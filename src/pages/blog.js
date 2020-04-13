@@ -1,6 +1,6 @@
 import React from "react"
 import { theme } from "../constants/getTheme"
-import Header from "../components/Header"
+import WrapWithAppBar from "../components/WrapWithAppBar"
 import ThemeProvider from "@material-ui/styles/ThemeProvider"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import { graphql } from "gatsby"
@@ -23,8 +23,9 @@ const BlogContent = ({ data }) => {
   const classes = useStyles()
 
   return (<div className={classes.wrapper}>
-    <Header />
-    <BlogFeed posts={data.allMarkdownRemark.edges}/>
+    <WrapWithAppBar>
+      <BlogFeed posts={data.allMarkdownRemark.edges}/>
+    </WrapWithAppBar>
   </div>)
 }
 

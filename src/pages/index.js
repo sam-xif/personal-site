@@ -1,5 +1,5 @@
 import React from "react"
-import Header from "../components/Header"
+import WrapWithAppBar from "../components/WrapWithAppBar"
 import { graphql } from 'gatsby'
 import ThemeProvider from "@material-ui/styles/ThemeProvider"
 // import collegeProject from '../../static/img/college-project.png'
@@ -11,8 +11,9 @@ export default ({ data }) => {
   return (
     <ThemeProvider theme={theme}>
       <div style={{height: '100%', overflow: 'hidden'}}>
-        <Header />
-        <SleekMenu />
+        <WrapWithAppBar>
+          <SleekMenu />
+        </WrapWithAppBar>
       </div>
     </ThemeProvider>
   )

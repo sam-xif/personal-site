@@ -1,5 +1,5 @@
 import React from "react"
-import Header from "../components/Header"
+import WrapWithAppBar from "../components/WrapWithAppBar"
 import { theme } from "../constants/getTheme"
 import ThemeProvider from "@material-ui/styles/ThemeProvider"
 import Typography from "@material-ui/core/Typography"
@@ -40,15 +40,16 @@ export default () => {
 const PageContent = () => {
   const classes = useStyles()
   return (<div className={classes.wrapper}>
-    <Header />
-    <div className={classes.contentWrap}>
-      <Fade in={true} timeout={1000}>
-        <Paper className={classes.messagePaper}>
-          <Typography variant={'h3'} color={'primary'} className={classes.message}>
-            404 :(
-          </Typography>
-        </Paper>
-      </Fade>
-    </div>
+    <WrapWithAppBar>
+      <div className={classes.contentWrap}>
+        <Fade in={true} timeout={1000}>
+          <Paper className={classes.messagePaper}>
+            <Typography variant={'h3'} color={'primary'} className={classes.message}>
+              404 :(
+            </Typography>
+          </Paper>
+        </Fade>
+      </div>
+    </WrapWithAppBar>
   </div>)
 }

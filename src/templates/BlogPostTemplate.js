@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from 'gatsby'
 import { theme } from "../constants/getTheme"
-import Header from "../components/Header"
+import Header from "../components/WrapWithAppBar"
 import ThemeProvider from "@material-ui/styles/ThemeProvider"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import Grid from "@material-ui/core/Grid"

@@ -1,7 +1,7 @@
 import React from "react"
 import { theme } from '../constants/getTheme'
 import ThemeProvider from "@material-ui/styles/ThemeProvider"
-import Header from "../components/Header"
+import Header from "../components/WrapWithAppBar"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import BlogPostTemplate from '../templates/BlogPostTemplate'
 

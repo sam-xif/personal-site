@@ -9,7 +9,7 @@ import { Link } from 'gatsby-theme-material-ui'
 const useStyles = makeStyles(theme => ({
   root: {
     //   zIndex: 99,
-    position: 'static',
+    position: 'fixed',
     top: 0,
     left: 0
   }, // a style rule
@@ -23,8 +23,7 @@ const useStyles = makeStyles(theme => ({
   gridRoot: {
     flexGrow: 1,
   },
-  toolbar: {
-  },
+  toolbar: theme.mixins.toolbar,
   link: {
     textDecoration: 'none',
     color: theme.palette.secondary.main
@@ -34,14 +33,18 @@ const useStyles = makeStyles(theme => ({
 export default ({ children }) => {
   const classes = useStyles()
   return (
-    <AppBar color={'primary'} className={classes.root}>
-      <Toolbar className={classes.toolbar}>
-        <Typography variant="h4" color={'secondary'} className={classes.title}>
-          <Link to={'/'} className={classes.link}>SGX</Link>
-        </Typography>
-        <Button color={'inherit'} className={classes.toolbarButton}>About Me</Button>
-        <Button color={'inherit'} className={classes.toolbarButton}>Contact</Button>
-      </Toolbar>
-    </AppBar>
+    <>
+      <AppBar color={'primary'} className={classes.root}>
+        <Toolbar className={classes.toolbar}>
+          <Typography variant="h4" color={'secondary'} className={classes.title}>
+            <Link to={'/'} className={classes.link}>SGX</Link>
+          </Typography>
+          <Button color={'inherit'} className={classes.toolbarButton}>About Me</Button>
+          <Button color={'inherit'} className={classes.toolbarButton}>Contact</Button>
+        </Toolbar>
+      </AppBar>
+      <div className={classes.toolbar} />
+      {children}
+    </>
   )
 }
