@@ -9,6 +9,9 @@ import { Link } from 'gatsby-theme-material-ui'
 const useStyles = makeStyles(theme => ({
   root: {
     //   zIndex: 99,
+    position: 'static',
+    top: 0,
+    left: 0
   }, // a style rule
   title: {
     flexGrow: 1,
@@ -31,7 +34,7 @@ const useStyles = makeStyles(theme => ({
 export default ({ children }) => {
   const classes = useStyles()
   return (
-    <AppBar color={'primary'} position="static" className={classes.root}>
+    <AppBar color={'primary'} className={classes.root}>
       <Toolbar className={classes.toolbar}>
         <Typography variant="h4" color={'secondary'} className={classes.title}>
           <Link to={'/'} className={classes.link}>SGX</Link>

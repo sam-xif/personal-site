@@ -28,6 +28,10 @@ const useStyles = makeStyles(theme => ({
   },
   postRoot: {
     backgroundColor: theme.palette.primary.main,
+    transition: theme.transitions.create(['background-color'], { duration: '0.5s' }),
+    '&:hover': {
+      backgroundColor: theme.palette.primary.light
+    }
   },
   postContent: {
     //padding: theme.spacing(1)
