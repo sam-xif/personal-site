@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from 'gatsby'
 import { theme } from "../constants/getTheme"
-import Header from "../components/WrapWithAppBar"
+import WrapWithAppBar from "../components/WrapWithAppBar"
 import ThemeProvider from "@material-ui/styles/ThemeProvider"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import Grid from "@material-ui/core/Grid"
@@ -57,8 +57,7 @@ const BlogPostContent = (props) => {
   const classes = useStyles()
   const fadeIn = 500
   return (
-    <>
-      <Header />
+    <WrapWithAppBar>
       <div className={classes.contentRoot}>
         <Grid container className={classes.container}>
           <Grid item xs={10} md={6} className={classes.postRoot}>
@@ -76,7 +75,7 @@ const BlogPostContent = (props) => {
         </Grid>
             {/*<h2>{frontmatter.date}</h2>*/}
       </div>
-    </>
+    </WrapWithAppBar>
   )
 }
 
