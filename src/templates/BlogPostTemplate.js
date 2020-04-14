@@ -12,7 +12,7 @@ import Tags from "../components/Tags"
 
 const useStyles = makeStyles(theme => ({
   contentRoot: {
-    height: '100%',
+    minHeight: '100%',
     backgroundColor: theme.palette.primary.dark, // TODO: Change this depending on props
     color: theme.palette.primary.contrastText
   },
@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'center',
     width: '100%',
-    height: '100%',
+    minHeight: '100%',
   },
   postRoot: {
     paddingTop: theme.spacing(4),
