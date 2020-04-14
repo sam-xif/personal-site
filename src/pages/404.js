@@ -22,6 +22,7 @@ const useStyles = makeStyles(theme => ({
   },
   messagePaper: {
     backgroundColor: theme.palette.secondary.main,
+    bottom: 30
   },
   message: {
     padding: theme.spacing(3),

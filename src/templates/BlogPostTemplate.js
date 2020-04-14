@@ -8,6 +8,7 @@ import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
 import Divider from "@material-ui/core/Divider"
 import Fade from "@material-ui/core/Fade"
+import Tags from "../components/Tags"
 
 const useStyles = makeStyles(theme => ({
   contentRoot: {
@@ -18,14 +19,23 @@ const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
     justifyContent: 'center',
-    width: '100%'
+    width: '100%',
+    height: '100%',
   },
   postRoot: {
-    marginTop: theme.spacing(2)
+    paddingTop: theme.spacing(4),
+    paddingLeft: theme.spacing(3),
+    paddingRight: theme.spacing(3),
+    backgroundColor: theme.palette.primary.main,
+    minHeight: '100%',
   },
   body: {
     fontSize: '115%',
     fontFamily: theme.typography.fontFamily
+  },
+  section: {
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(1)
   }
 }))
 
@@ -64,12 +74,19 @@ const BlogPostContent = (props) => {
             <Fade in={true} timeout={fadeIn}>
               <Typography variant={'h4'} color={'secondary'}>{frontmatter.title}</Typography>
             </Fade>
+            <div className={classes.section}>
+              <Typography className={classes.text}><i>{frontmatter.description}</i></Typography>
+            </div>
+            <div className={classes.section}>
+              <Tags tags={frontmatter.tags} />
+            </div>
             {/*<Fade in={true} timeout={2 * fadeIn}>*/}
-              <Divider />
+            <div className={classes.section}>
               <div
                 className={classes.body}
                 dangerouslySetInnerHTML={{ __html: html }}
               />
+            </div>
             {/*</Fade>*/}
           </Grid>
         </Grid>
@@ -87,6 +104,7 @@ export const query = graphql`
         title
         date
         tags
+        description
       }
     }  
   }

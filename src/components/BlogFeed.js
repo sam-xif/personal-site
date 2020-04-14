@@ -10,6 +10,7 @@ import Fade from "@material-ui/core/Fade"
 import ButtonBase from "@material-ui/core/ButtonBase"
 import moment from 'moment'
 import { navigate } from "gatsby"
+import Tags from "./Tags"
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -48,19 +49,9 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'center'
   },
-  tag: {
-    backgroundColor: theme.palette.primary.dark,
-    padding: theme.spacing(1),
-    margin: theme.spacing(1),
-    color: theme.palette.primary.contrastText,
-    display: 'inline'
-  },
-  tagsContainer: {
-    paddingTop: theme.spacing(2)
-  },
   paperDivider: {
     marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(2)
+    marginBottom: theme.spacing(1)
   }
 }))
 
@@ -97,13 +88,7 @@ export default (props) => {
                     </div>
                     <Divider className={classes.paperDivider} />
                     <Typography className={classes.text}><i>{node.frontmatter.description}</i></Typography>
-                    <div className={classes.tagsContainer}>
-                      {node.frontmatter.tags.map(tag => {
-                        return (
-                          <Typography className={classes.tag}>{tag}</Typography>
-                        )
-                      })}
-                    </div>
+                    <Tags tags={node.frontmatter.tags} />
                   </CardContent>
                 </Card>
               </ButtonBase>

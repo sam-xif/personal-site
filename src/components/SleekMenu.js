@@ -111,7 +111,7 @@ export default () => {
             }}
           >
             <span className={classes.imageBackdrop}/>
-            <Fade in={!fadingOut} timeout={800}>
+            <Fade in={!fadingOut} timeout={1200}>
               <span className={classes.imageButton}>
                 <Typography
                   component="span"

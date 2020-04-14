@@ -3,7 +3,6 @@ import { theme } from '../constants/getTheme'
 import ThemeProvider from "@material-ui/styles/ThemeProvider"
 import Header from "../components/WrapWithAppBar"
 import makeStyles from "@material-ui/core/styles/makeStyles"
-import BlogPostTemplate from '../templates/BlogPostTemplate'
 
 const useStyles = makeStyles(theme => ({
   content: {

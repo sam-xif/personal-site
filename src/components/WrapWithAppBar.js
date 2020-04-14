@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography"
 import Toolbar from "@material-ui/core/Toolbar"
 import Button from "@material-ui/core/Button"
 import { Link } from 'gatsby-theme-material-ui'
+import { navigate } from 'gatsby'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -39,8 +40,8 @@ export default ({ children }) => {
           <Typography variant="h4" color={'secondary'} className={classes.title}>
             <Link to={'/'} className={classes.link}>SGX</Link>
           </Typography>
+          <Button color={'inherit'} className={classes.toolbarButton} onClick={() => navigate('/')}>Home</Button>
           <Button color={'inherit'} className={classes.toolbarButton}>About Me</Button>
-          <Button color={'inherit'} className={classes.toolbarButton}>Contact</Button>
         </Toolbar>
       </AppBar>
       <div className={classes.toolbar} />
