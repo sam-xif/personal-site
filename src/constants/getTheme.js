@@ -6,6 +6,10 @@ export const theme = createMuiTheme({
       'Montserrat',
       'sans-serif'
     ].join(','),
+    fontFamily2: [
+      'Artifika',
+      'serif'
+    ].join(',')
   },
   spacing: 8,
   palette: {

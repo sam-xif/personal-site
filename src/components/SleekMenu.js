@@ -137,7 +137,7 @@ export default () => {
             }}
             onClick={() => {
               setFadingOut(true)
-              setTimeout(() => navigate('/portfolio'), navigateDelay)
+              setTimeout(() => navigate('/cv'), navigateDelay)
             }}
           >
             {/*<span*/}
@@ -156,7 +156,7 @@ export default () => {
                   color="inherit"
                   className={classes.imageTitle}
                 >
-                  PORTFOLIO
+                  CURRICULUM VITAE
                   <span className={classes.imageMarked}/>
                 </Typography>
               </span>

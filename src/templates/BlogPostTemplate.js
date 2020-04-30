@@ -30,8 +30,8 @@ const useStyles = makeStyles(theme => ({
     minHeight: '100%',
   },
   body: {
-    fontSize: '115%',
-    fontFamily: theme.typography.fontFamily
+    fontSize: '120%',
+    fontFamily: theme.typography.fontFamily2
   },
   section: {
     marginTop: theme.spacing(1),
@@ -70,7 +70,7 @@ const BlogPostContent = (props) => {
     <WrapWithAppBar>
       <div className={classes.contentRoot}>
         <Grid container className={classes.container}>
-          <Grid item xs={10} md={6} className={classes.postRoot}>
+          <Grid item xs={12} sm={10} md={6} xl={5} className={classes.postRoot}>
             <Fade in={true} timeout={fadeIn}>
               <Typography variant={'h4'} color={'secondary'}>{frontmatter.title}</Typography>
             </Fade>
