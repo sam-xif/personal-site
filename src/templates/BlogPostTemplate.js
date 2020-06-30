@@ -43,9 +43,7 @@ export default ({ data }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   return (
-    <ThemeProvider theme={theme}>
       <BlogPostContent frontmatter={frontmatter} html={html} />
-    </ThemeProvider>
   )
 
   /*
@@ -67,7 +65,6 @@ const BlogPostContent = (props) => {
   const classes = useStyles()
   const fadeIn = 500
   return (
-    <WrapWithAppBar>
       <div className={classes.contentRoot}>
         <Grid container className={classes.container}>
           <Grid item xs={12} sm={10} md={6} xl={5} className={classes.postRoot}>
@@ -92,7 +89,6 @@ const BlogPostContent = (props) => {
         </Grid>
             {/*<h2>{frontmatter.date}</h2>*/}
       </div>
-    </WrapWithAppBar>
   )
 }
 

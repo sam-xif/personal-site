@@ -1,14 +1,43 @@
 import React, { Fragment } from "react"
-import { theme } from '../constants/getTheme'
+import { getTheme } from '../constants/getTheme'
 import ThemeProvider from "@material-ui/styles/ThemeProvider"
 import CssBaseline from "@material-ui/core/CssBaseline"
+import { useQueryParam, BooleanParam } from "use-query-params"
+import WrapWithAppBar from "../components/WrapWithAppBar"
+import makeStyles from "@material-ui/core/styles/makeStyles"
 
-export default ({ children }) => {
-  return (<Fragment>
-    <ThemeProvider theme={theme}>
-      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+export const DEFAULT_DARK_MODE_STATUS = true
+
+const useStyles = makeStyles(theme => ({
+  wrapper: {
+    backgroundColor: theme.palette.primary.dark,
+    minHeight: '100%'
+  }
+}))
+
+export default function Layout(props) {
+  const [darkMode, _] = useQueryParam('dm', BooleanParam)
+  const actualDarkMode = darkMode === undefined ? DEFAULT_DARK_MODE_STATUS : darkMode
+
+  return (
+    <Fragment>
+      <ThemeProvider theme={getTheme({ darkMode: actualDarkMode })}>
+        <LayoutInner {...props} />
+      </ThemeProvider>
+    </Fragment>
+  )
+}
+
+const LayoutInner = ({ children }) => {
+  const classes = useStyles()
+
+  return (<>
       <CssBaseline />
-      {children}
-    </ThemeProvider>
-  </Fragment>)
+      <div className={classes.wrapper}>
+        <WrapWithAppBar>
+          {children}
+        </WrapWithAppBar>
+      </div>
+    </>
+  )
 }

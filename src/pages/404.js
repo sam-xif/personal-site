@@ -32,16 +32,13 @@ const useStyles = makeStyles(theme => ({
 
 export default () => {
   return (
-    <ThemeProvider theme={theme}>
       <PageContent />
-    </ThemeProvider>
   )
 }
 
 const PageContent = () => {
   const classes = useStyles()
-  return (<div className={classes.wrapper}>
-    <WrapWithAppBar>
+  return (
       <div className={classes.contentWrap}>
         <Fade in={true} timeout={1000}>
           <Paper className={classes.messagePaper}>
@@ -50,7 +47,5 @@ const PageContent = () => {
             </Typography>
           </Paper>
         </Fade>
-      </div>
-    </WrapWithAppBar>
-  </div>)
+      </div>)
 }

@@ -76,7 +76,8 @@ const useStyles = makeStyles(theme => ({
   imageTitle: {
     position: 'relative',
     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
-    bottom: 30
+    bottom: 30,
+    color: theme.palette.primary.contrastText
   },
   imageMarked: {
     height: 3,
@@ -95,8 +96,8 @@ export default () => {
   const navigateDelay = 800
   return (
     <>
-      <Grid container style={{height: '100%'}}>
-        <Grid item xs={6} style={{ height: '100%' }}>
+      <Grid container style={{height: '100vh'}}>
+        <Grid item xs={6} style={{ height: '100vh' }}>
           <ButtonBase
             focusRipple
             className={classes.image}
@@ -116,7 +117,6 @@ export default () => {
                 <Typography
                   component="span"
                   variant="subtitle1"
-                  color="inherit"
                   className={classes.imageTitle}
                 >
                   BLOG
@@ -126,7 +126,7 @@ export default () => {
             </Fade>
           </ButtonBase>
         </Grid>
-        <Grid item xs={6} style={{ height: '100%' }}>
+        <Grid item xs={6} style={{ height: '100vh' }}>
           <ButtonBase
             focusRipple
             className={classes.image}
@@ -153,7 +153,6 @@ export default () => {
                 <Typography
                   component="span"
                   variant="subtitle1"
-                  color="inherit"
                   className={classes.imageTitle}
                 >
                   CURRICULUM VITAE

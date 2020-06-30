@@ -1,11 +1,13 @@
 import React from "react"
-import { AppBar } from '@material-ui/core'
+import { AppBar, Switch } from "@material-ui/core"
 import makeStyles from "@material-ui/core/styles/makeStyles"
 import Typography from "@material-ui/core/Typography"
 import Toolbar from "@material-ui/core/Toolbar"
 import Button from "@material-ui/core/Button"
 import { Link } from 'gatsby-theme-material-ui'
 import { navigate } from 'gatsby'
+import { BooleanParam, useQueryParam } from "use-query-params"
+import { DEFAULT_DARK_MODE_STATUS } from "../layouts"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -32,6 +34,9 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default ({ children }) => {
+  const [darkMode, setDarkMode] = useQueryParam('dm', BooleanParam)
+  const actualDarkMode = darkMode === undefined ? DEFAULT_DARK_MODE_STATUS : darkMode
+
   const classes = useStyles()
   return (
     <>
@@ -40,6 +45,12 @@ export default ({ children }) => {
           <Typography variant="h4" color={'secondary'} className={classes.title}>
             <Link to={'/'} className={classes.link}>SGX</Link>
           </Typography>
+          <Switch
+            checked={actualDarkMode}
+            onChange={(e, value) => {
+              setDarkMode(value)
+            }}
+          />
           <Button color={'inherit'} className={classes.toolbarButton} onClick={() => navigate('/')}>Home</Button>
           <Button color={'inherit'} className={classes.toolbarButton}>About Me</Button>
         </Toolbar>

@@ -52,6 +52,7 @@ module.exports = {
         name: `markdown-posts`,
       },
     },
-    `gatsby-transformer-remark`
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-use-query-params`
   ]
 }

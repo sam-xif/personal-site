@@ -5,20 +5,11 @@ import ThemeProvider from "@material-ui/styles/ThemeProvider"
 // import collegeProject from '../../static/img/college-project.png'
 import { theme } from '../constants/getTheme'
 import SleekMenu from "../components/SleekMenu"
+import Layout from '../layouts'
 
 export default ({ data }) => {
-
-  return (
-    <ThemeProvider theme={theme}>
-      <div style={{height: '100%', overflow: 'hidden'}}>
-        <WrapWithAppBar>
-          <SleekMenu />
-        </WrapWithAppBar>
-      </div>
-    </ThemeProvider>
-  )
+  return (<SleekMenu />)
 }
-
 
 export const query = graphql`
   query {

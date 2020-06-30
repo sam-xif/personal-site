@@ -14,19 +14,13 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default ({ data }) => {
-  return(<ThemeProvider theme={theme}>
-    <BlogContent data={data} />
-  </ThemeProvider>)
+  return(<BlogContent data={data} />)
 }
 
 const BlogContent = ({ data }) => {
   const classes = useStyles()
 
-  return (<div className={classes.wrapper}>
-    <WrapWithAppBar>
-      <BlogFeed posts={data.allMarkdownRemark.edges}/>
-    </WrapWithAppBar>
-  </div>)
+  return (<BlogFeed posts={data.allMarkdownRemark.edges}/>)
 }
 
 
