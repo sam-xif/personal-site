@@ -7,5 +7,7 @@ tags:
   - blog
   - about
 description: introducing myself and my personal brand
+live: true
+featured: false
 ---
 Thank you for reading the first post on my blog! I want to share what this blog means to me.

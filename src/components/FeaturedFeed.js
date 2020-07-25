@@ -62,10 +62,14 @@ export default (props) => {
       <Grid item xs={10} md={6}>
         <div className={classes.titleContainer}>
           <Fade in={!fadingOut} timeout={500}>
-            <Typography variant={'h3'} className={classes.title}>Blog</Typography>
+            <Typography variant={'h3'} className={classes.title}>Featured Posts</Typography>
           </Fade>
         </div>
         {posts.map(({ node }, idx) => {
+          if (!node.frontmatter.live || !node.frontmatter.featured) {
+            return null
+          }
+
           const date = moment(node.frontmatter.date)
           return (
             <Fade in={!fadingOut} timeout={500 * (idx + 2)}>

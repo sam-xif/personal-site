@@ -10,7 +10,7 @@ export const DEFAULT_DARK_MODE_STATUS = true
 
 const useStyles = makeStyles(theme => ({
   wrapper: {
-    backgroundColor: theme.palette.primary.dark,
+    backgroundColor: theme.palette.primary.main,
     minHeight: '100%'
   }
 }))

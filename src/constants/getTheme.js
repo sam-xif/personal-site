@@ -1,6 +1,6 @@
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme"
 
-export const getTheme = ({ darkMode }) => {
+export const getTheme = () => {
   return createMuiTheme({
     typography: {
       fontFamily: [
@@ -10,15 +10,15 @@ export const getTheme = ({ darkMode }) => {
       fontFamily2: [
         'Artifika',
         'serif'
-      ].join(',')
+      ].join(','),
     },
     spacing: 8,
     palette: {
       primary: {
-        main: darkMode ? '#262626' : '#fff'
+        main: '#fff'
       },
       secondary: {
-        main: '#ff5713'
+        main: '#12002e'
         //]'#ff5713'
         //'#3095ff'
         //'#ff6708'

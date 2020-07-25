@@ -40,6 +40,8 @@ export const query = graphql`
             date
             tags
             description
+            featured
+            live
           }
         }
       }

@@ -6,9 +6,25 @@ import ThemeProvider from "@material-ui/styles/ThemeProvider"
 import { theme } from '../constants/getTheme'
 import SleekMenu from "../components/SleekMenu"
 import Layout from '../layouts'
+import BlogFeed from "../components/BlogFeed"
+import makeStyles from "@material-ui/core/styles/makeStyles"
+import FeaturedFeed from "../components/FeaturedFeed"
+
+const useStyles = makeStyles(theme => ({
+  wrapper: {
+    backgroundColor: theme.palette.primary.main,
+    minHeight: '100%'
+  }
+}))
 
 export default ({ data }) => {
-  return (<SleekMenu />)
+  return(<BlogContent data={data} />)
+}
+
+const BlogContent = ({ data }) => {
+  const classes = useStyles()
+
+  return (<FeaturedFeed posts={data.allMarkdownRemark.edges}/>)
 }
 
 export const query = graphql`
@@ -16,6 +32,26 @@ export const query = graphql`
     site { 
       siteMetadata {
         title
+      }
+    }
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 1000
+    ) {
+      edges {
+        node {
+          fields {
+            path
+          }
+          frontmatter {
+            title
+            date
+            tags
+            description
+            featured
+            live
+          }
+        }
       }
     }
   }

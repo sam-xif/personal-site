@@ -13,7 +13,7 @@ import Tags from "../components/Tags"
 const useStyles = makeStyles(theme => ({
   contentRoot: {
     minHeight: '100%',
-    backgroundColor: theme.palette.primary.dark, // TODO: Change this depending on props
+    backgroundColor: theme.palette.primary.main, // TODO: Change this depending on props
     color: theme.palette.primary.contrastText
   },
   container: {
@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
     minHeight: '100%',
   },
   body: {
-    fontSize: '120%',
+    fontSize: '130%',
     fontFamily: theme.typography.fontFamily2
   },
   section: {

@@ -7,6 +7,8 @@ tags:
   - lorem
   - ipsum
 description: Lorem ipsum dolor sit amet
+live: true
+featured: true
 ---
 ## Lorem ipsum dolor sit amet
 
