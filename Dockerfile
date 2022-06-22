@@ -1,4 +1,4 @@
-FROM local/gatsby:onbuild as build
+FROM samxif/gatsby:onbuild as build
 
-FROM local/gatsby
+FROM samxif/gatsby
 COPY --from=build /app/public /pub
